@@ -1,0 +1,23 @@
+local Players = game:GetService("Players")
+
+-- Function to swap positions
+local function swapPositions(player1, player2)
+    local char1 = player1.Character
+    local char2 = player2.Character
+
+    if char1 and char2 then
+        local pos1 = char1.HumanoidRootPart.Position
+        local pos2 = char2.HumanoidRootPart.Position
+
+        char1.HumanoidRootPart.CFrame = CFrame.new(pos2)
+        char2.HumanoidRootPart.CFrame = CFrame.new(pos1)
+    end
+end
+
+-- Example usage
+local player1 = Players:FindFirstChild("Player1Name")
+local player2 = Players:FindFirstChild("Player2Name")
+
+if player1 and player2 then
+    swapPositions(player1, player2)
+end
